@@ -5,7 +5,7 @@
 using namespace std;
 
 
- //defining rows and columns
+   //defining rows and columns
     int const a_rows = 2;
     int const a_columns = 3;
     int const b_rows = 3;
@@ -14,22 +14,32 @@ using namespace std;
     int const ab_columns = 2;
     int ab_matrix[ab_rows][ab_columns];
 
-int matrix_A_function(int rows, int columns)
+
+int matrix_AB_function(int matrix[ab_rows][ab_columns])
 {
-    
+
     //initializing matrices
-    int matrix_A[rows][columns] = 
+    int matrix_A[a_rows][a_columns] = 
     {
         {2,-3,-1},
         {5, 0, 1}
     };
+    
+    int matrix_B[b_rows][b_columns] = 
+    {
+        {5,-1},
+        {0,-2},
+        {1,2}
+    };
 
+
+    //traversing all entries in matrix A
     cout << "Matrix A: " << "\n";
 
     //traversing every entries
-    for(int i = 0; i < rows; i++)
+    for(int i = 0; i < a_rows; i++)
     {
-        for(int j = 0; j < columns;j++)
+        for(int j = 0; j < a_columns;j++)
         {
             cout <<"Row[" << i + 1 << "]" << " " << "Column["  << j+1 << "]: " << matrix_A[i][j] << " ";
         }
@@ -40,21 +50,10 @@ int matrix_A_function(int rows, int columns)
     cout << "Matrix B: " << "\n";
 
 
-    return 0;
-}
-
-int matrix_B_function(int rows, int columns)
-{
-     int matrix_B[rows][columns] = 
+    //traversing all entries in matrix B
+    for(int i = 0; i < b_rows; i++)
     {
-        {5,-1},
-        {0,-2},
-        {1,2}
-    };
-
-    for(int i = 0; i < rows; i++)
-    {
-        for (int j = 0; j < columns; j++)
+        for (int j = 0; j < b_columns; j++)
         {
             /* code */
             cout <<"Row[" << i + 1 << "]" << " " << "Column["  << j+1 << "]: " << matrix_B[i][j] << " ";
@@ -62,25 +61,10 @@ int matrix_B_function(int rows, int columns)
         cout << "\n";
     }
 
-    return 0;
-}
-
-int matrix_AB_function(int matrix[ab_rows][ab_columns])
-{
-
-    int matrix1 = matrix_A_function(a_rows,a_columns);
-    int matrix2 = matrix_B_function(b_rows,b_columns);
-    //filling up values for the matrix
-    for(int i = 0; i < ab_rows; i++)
-    {
-        for(int j = 0; j < ab_columns; j++)
-        {
-            matrix[i][j] = 0;
-            cout << matrix[i][j];
-        }
-    }
+    cout << "\n";
 
     //checks if the columns in matrix A is equal to the rows of matrix B
+    //main algorithm for the multiplication part
     if(a_columns == b_rows)
     {
         //proceed to the getting of the products of each corresponding entries of both matrices
@@ -91,23 +75,34 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
         {
             for(int j = 0; j < b_columns; j++)
             {
+                 matrix[i][j] = 0;
+
                 for ( int k = 0; k < a_columns; k++)
                 {
-                  //  matrix[i][j] += 
+                   matrix[i][j] += matrix_A[i][k] * matrix_B[k][j];
 
-                }
-                
+                } 
             }
         }
     }
-
     return 0;
 }
+
+void display_matrix(int matrix[a_rows][b_columns])
+{
+       for(int i = 0; i < a_rows; i++)
+        {
+            for(int j = 0; j < b_columns; j++)
+            {
+                cout <<"Row[" << i + 1 << "]" << " " << "Column["  << j+1 << "]: " << matrix[i][j] << "\n";
+            }
+        }
+}
+
 int main()
 {
     
-    //matrix_A_function(a_rows,a_columns);
-    //matrix_B_function(b_rows,b_columns);
     matrix_AB_function(ab_matrix);
+    display_matrix(ab_matrix);
     return 0;
 }
