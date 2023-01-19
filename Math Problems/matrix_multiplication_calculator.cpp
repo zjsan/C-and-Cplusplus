@@ -75,10 +75,13 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
         {
             for(int j = 0; j < b_columns; j++)
             {
+                //filling up the empty matrix to avoid errors
                  matrix[i][j] = 0;
 
                 for ( int k = 0; k < a_columns; k++)
                 {
+                   //multiplying each entries in the rows of matrix A to the corresponding entries of the columns in matrix B 
+                   //adding them then assigning it to the matrix that consist 0s
                    matrix[i][j] += matrix_A[i][k] * matrix_B[k][j];
 
                 } 
