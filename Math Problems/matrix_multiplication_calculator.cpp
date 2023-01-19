@@ -67,6 +67,9 @@ int matrix_B_function(int rows, int columns)
 
 int matrix_AB_function(int matrix[ab_rows][ab_columns])
 {
+
+    int matrix1 = matrix_A_function(a_rows,a_columns);
+    int matrix2 = matrix_B_function(b_rows,b_columns);
     //filling up values for the matrix
     for(int i = 0; i < ab_rows; i++)
     {
@@ -90,7 +93,7 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
             {
                 for ( int k = 0; k < a_columns; k++)
                 {
-                    /* code */
+                  //  matrix[i][j] += 
 
                 }
                 
