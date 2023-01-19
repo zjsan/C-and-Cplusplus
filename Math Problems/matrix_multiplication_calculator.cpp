@@ -25,6 +25,8 @@ int matrix_A_function(int rows, int columns)
     };
 
     cout << "Matrix A: " << "\n";
+
+    //traversing every entries
     for(int i = 0; i < rows; i++)
     {
         for(int j = 0; j < columns;j++)
@@ -49,8 +51,6 @@ int matrix_B_function(int rows, int columns)
         {0,-2},
         {1,2}
     };
-
-    int matrix_AB[rows][columns];
 
     for(int i = 0; i < rows; i++)
     {
@@ -81,7 +81,21 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
     if(a_columns == b_rows)
     {
         //proceed to the getting of the products of each corresponding entries of both matrices
-        
+        //outer loop is iterating thru every entries in matrix A rows
+        //loop 2 is iterating thru the entire columns of matrix B 
+        //inner loop corresponds to all entries in matrix A
+        for(int i = 0; i < a_rows; i++)
+        {
+            for(int j = 0; j < b_columns; j++)
+            {
+                for ( int k = 0; k < a_columns; k++)
+                {
+                    /* code */
+
+                }
+                
+            }
+        }
     }
 
     return 0;
