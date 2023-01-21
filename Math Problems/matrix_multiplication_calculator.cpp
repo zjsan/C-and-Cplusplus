@@ -37,8 +37,6 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
         {1,2}
     };
 
-
-    //traversing all entries in matrix A
     cout << "Matrix A: " << "\n";
 
     //traversing every entries in matrix A
@@ -53,7 +51,6 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
 
     cout << "\n";  
     cout << "Matrix B: " << "\n";
-
 
     //traversing all entries in matrix B
     for(int i = 0; i < b_rows; i++)
