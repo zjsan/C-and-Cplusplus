@@ -1,3 +1,8 @@
+//Sample Matrix Multiplication
+//Coded Based on the Math 113 - Linear Algebra lesson
+//Coded by: Zainal Jumaine Santos
+//Date: 01 - 19 - 23
+
 #include <iostream>
 #include <stdlib.h>
 #include <conio.h>
