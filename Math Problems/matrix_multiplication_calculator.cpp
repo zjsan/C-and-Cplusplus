@@ -75,7 +75,7 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
         //proceed to the getting of the products of each corresponding entries of both matrices
         //outer loop is iterating thru every entries in matrix A rows
         //loop 2 is iterating thru the entire columns of matrix B 
-        //inner loop corresponds to all entries in matrix A
+        //loop3 corresponds to all entries in matrix A
         for(int i = 0; i < a_rows; i++)
         {
             for(int j = 0; j < b_columns; j++)
