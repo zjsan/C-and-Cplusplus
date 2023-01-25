@@ -14,9 +14,9 @@ using namespace std;
     const int a_rows = 2;
     const int a_columns = 3;
     const int b_rows = 3;
-    const int b_columns = 2;
+    const int b_columns = 5;
     const int ab_rows = 2;
-    const int ab_columns = 2;
+    const int ab_columns = 5;
     int ab_matrix[ab_rows][ab_columns];
 
 
@@ -26,15 +26,15 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
     //initializing matrices
     int matrix_A[a_rows][a_columns] = 
     {
-        {2,-3,-1},
-        {5, 0, 1}
+        {-2,1,3},
+        {-1,2,5}
     };
     
     int matrix_B[b_rows][b_columns] = 
     {
-        {5,-1},
-        {0,-2},
-        {1,2}
+        {2,0,-3,1,5},
+        {-1,-2,4,0,1},
+        {-4,0,1,2,6}
     };
 
     cout << "Matrix A: " << "\n";
@@ -94,8 +94,7 @@ int matrix_AB_function(int matrix[ab_rows][ab_columns])
 
 void display_matrix(int matrix[a_rows][b_columns])
 {
-    //final output of the matrix should be equal to the rows of the first matrix and columns of the second matrix   
-    if(a_rows == b_columns) 
+     
     {
         for(int i = 0; i < a_rows; i++)
         {
